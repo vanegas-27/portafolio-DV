@@ -1,7 +1,0 @@
-[[redirects]]
-
-  from = "/*"
-
-  to = "/v1/index.html"
-
-  status = 202
