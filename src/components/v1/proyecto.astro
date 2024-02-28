@@ -1,0 +1,118 @@
+---
+
+interface Props {
+    img : string
+    title : string
+    descripcion : string
+    text : string
+    link? : string
+    skills? : string[]
+}
+
+
+const { img, title , descripcion, text, link ,skills} = Astro.props
+---	
+
+<article class="card mb-2 w-sm-100">
+
+    <div class="row g-0">
+
+        <div class="col-md-4">
+        <img src={img} class="img-fluid rounded-start proyect" alt=`proyecto ${title}`>
+        </div>
+
+        <div class="col-md-8">
+
+        <div class="card-body">
+
+            <h5 class="card-title"><a href={link??"#"}
+                target="_blank">{title}</a></h5>
+
+            <p class="card-text">{descripcion}</p>
+            <p class="card-text"><small>{text}</small></p>
+
+        </div>
+
+        </div>
+
+        <div class="tegnologias d-flex">
+          {
+            skills?.map(item => <span>{item}</span> )
+          }
+        </div>
+
+    </div>
+
+
+</article>
+
+<style>
+ p {
+  font-size: 1.1rem;
+}
+  .card {
+  transition: all 0.3s ease-in-out;
+  filter: blur(2px);
+  background-color: #2e2e2e;
+  background-color: rgb(17, 17, 17);
+  color: var(--white);
+  border: none;
+  overflow: hidden;
+}
+  .card h5 {
+  font-size: 1.6rem;
+  transition: transform 0.4s ease-in-out;
+  display: table;
+}
+  .card h5 a {
+  text-decoration: none;
+  color: var(--azulP);
+}
+  .card h5:hover {
+  transform: translateX(20px);
+  filter: drop-shadow(1px 1px 20px var(--azulP));
+}
+  .card .proyect {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+  .card:hover {
+  box-shadow: 1px 0px 900px var(--azulP);
+  translate: 0px -20px;
+  transform: scale(1.05);
+  filter: blur(0px);
+}
+
+ .tegnologias {
+  gap: 8px;
+  padding: 0px 10px ;
+}
+ .tegnologias span {
+  margin: 5px 0px;
+  padding: 4px 7px;
+  border-radius: 10px;
+  background-color: #06c4f318;
+  font-size: 0.80rem;
+  font-weight: 500;
+  cursor: default;
+  transition: background-color .20s ease-in-out ;
+
+  &:hover{
+    background-color: #009dc4;
+
+  }
+  
+}
+
+@media (width < 768px) {
+ .card {
+    filter: none;
+  }
+ .card:hover {
+    transform: none;
+    translate: 0px 0px;
+    box-shadow: none;
+  }
+}
+</style>

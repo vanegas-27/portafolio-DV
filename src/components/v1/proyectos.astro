@@ -1,0 +1,62 @@
+---
+import Proyecto from './proyecto.astro'
+const contenido = await Astro.glob('../../content/*.md') 
+---	
+    
+    <main class="container m-auto">
+	
+		<section class="container-proyectos">
+		<h3>Proyectos</h3>
+	
+		<div id="proyectos">
+
+			{
+				contenido.map(item => {
+					return <Proyecto
+						img={item.frontmatter.img}
+						title={item.frontmatter.title}
+						descripcion={item.frontmatter.descripcion}
+						text={item.frontmatter.text}
+						link={item.frontmatter.link}
+						skills= {item.frontmatter.skills}
+					/>
+						
+				})
+			}
+	
+		</div>
+
+		</section>
+	
+	</main>
+
+
+
+<style>
+    main .container-proyectos {
+  margin: 10vh 0px;
+}
+main .container-proyectos h3 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--azulP);
+  margin: 10px 0px 2rem 0px;
+  filter: drop-shadow(1px 1px 1px var(--white));
+  margin: 10vh auto;
+}
+main .container-proyectos #proyectos {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 30px;
+}
+@media (width < 768px) {
+  main .container-proyectos #proyectos {
+    grid-template-columns: repeat(auto-fill, 90%);
+    justify-content: center;
+    margin: 0px auto;
+    gap: 20px 0px;
+  }
+}
+</style>

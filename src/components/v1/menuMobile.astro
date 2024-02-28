@@ -1,0 +1,81 @@
+<aside class="menuLeft d-block d-md-none">
+	
+    <span>🍔</span>
+
+    <nav class="inactive">
+
+    <figure class="p-3">
+        <img src="../img/lgN2-r.png" alt="Logo 
+            personalizado" class="img-fluid">
+    </figure>
+
+    <ul>
+        <li><a href="#inicio">Home</a></li>
+        <li><a href="#me">Sobre mi</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#Educacion">Educacion</a></li>
+    </ul>
+    </nav>
+
+</aside>
+
+<script>
+
+const span = document.querySelector('aside span')?.addEventListener('click', function(event){
+  // if (span === null) throw new Error('error: esta vacia..')
+
+event.preventDefault();
+
+document.querySelector('.menuLeft nav')?.classList.toggle('inactive');
+
+})
+
+</script>
+
+<style>
+    .menuLeft {
+  position: relative;
+}
+.menuLeft span {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 11;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.menuLeft nav {
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.87);
+  z-index: 10;
+  position: fixed;
+  text-align: center;
+}
+.menuLeft nav img {
+  width: 120px;
+  filter: drop-shadow(0px 0px 20px var(--azulP));
+}
+.menuLeft nav ul {
+  padding: 0px;
+  text-align: center;
+}
+.menuLeft nav ul li {
+  padding: 5px 8px;
+  margin: 15px auto;
+  transition: all 0.4s ease-in-out;
+  border-radius: 10px;
+  width: 9rem;
+}
+.menuLeft nav ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.4rem;
+}
+.menuLeft nav ul li:hover {
+  background-color: var(--azulP);
+  transform: scale(0.9);
+  box-shadow: 0px 0px 30px var(--azulP);
+}
+</style>

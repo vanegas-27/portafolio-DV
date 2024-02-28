@@ -1,0 +1,84 @@
+
+<header class="row container align-items-center m-auto d-none d-md-flex" id="navbar">
+
+    <figure class="col-4">
+    <a href="/v1"><img src="../img/lgN2-r.png" alt="Logo 
+            personalizado" class="img-fluid"></a>
+    </figure>
+
+    <nav class="col-8 navbar">
+    <ul class="d-flex justify-content-around w-100">
+        <li><a href="#inicio">Home</a></li>
+        <li><a href="#me">Sobre mi</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#Educacion">Educacion</a></li>
+    </ul>
+    </nav>
+
+</header>
+
+<script>
+
+  let prevScrollpos = window.pageYOffset;
+
+  window.onscroll = function () {
+    let currentScrollPos = window.pageYOffset;
+    let navbar = document.getElementById("navbar");
+
+    if(navbar === null) throw new Error("error: menu")
+
+    if (prevScrollpos > currentScrollPos) {
+      navbar.style.top = "10px";
+    } else {
+      navbar.style.top = `-${10 + navbar.clientHeight}px`;
+    }
+
+    prevScrollpos = currentScrollPos;
+  };
+
+</script>
+
+<style>
+    header {
+  position: fixed;
+  height: 15vh;
+  z-index: 10;
+  top: 10px;
+  right: 0px;
+  left: 0px;
+  background-color: rgba(19, 19, 19, 0.575);
+  padding: 4px 0px;
+  border-radius: 20px;
+  transition: all 0.6s ease-in-out;
+}
+header figure {
+  text-align: center;
+}
+header figure img {
+  width: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.7s ease-in-out;
+}
+header figure img:hover {
+  filter: drop-shadow(2px 2px 10px rgb(3, 100, 247));
+  transform: scale(1.1) rotate(360deg);
+}
+header li a {
+  color: var(--white);
+  text-decoration: none;
+}
+header .navbar ul li {
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background-color, translate 0.3s ease-in-out;
+  border-radius: 15px;
+  padding: 5px 8px;
+}
+header .navbar ul li:hover {
+  translate: 5px 0px;
+  background-color: var(--azulP);
+  transform: scale(0.9);
+  box-shadow: 0px 0px 30px var(--azulP);
+}
+</style>

@@ -1,0 +1,115 @@
+<section class="row d-flex align-items-center">
+	
+    <article class="col-12 col-md-6 descript pt-5" id="inicio">
+        <h1 class="focus-in-expand">Hola👋🏽 Soy <span>Davinson vanegas</span></h1>
+        <span class="dev">Desarrollador <span id="dv"> Trainee</span></span>
+
+        <div class="social mt-2">
+        <a href="https://www.linkedin.com/in/davinson-vanegas/"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/vanegas-27"><i class="bi bi-github"></i></a>
+        <a href="https://twitter.com/DavidsonV27"><i class="bi bi-twitter-x"></i></a>
+        <a href="mailto:davidsonvanegas27@gmail.com" title="davidsonvanegas27@gmail.com"><i class="bi bi-envelope-fill"></i></a>
+        </div>
+
+        <div class="cv">
+        <a href="../CV.pdf" download="CV_davinson_vanegas.pdf">Descargar CV</a>
+        </div>
+
+    </article>
+
+    <article class="col-12 col-md-6">
+
+        <figure class="img-me slide-in-right">
+        <img src="../img/mia.jpg" alt="Foto del desarrollador Davinson Vanegas" class="img-fluid ">
+        </figure>
+
+    </article>
+
+</section>
+
+<script>
+
+const dic = [
+    " Back-end",
+    " Front-end",
+    " Full Stack jr",
+    " Trainee"
+  ];
+  
+  let posicion = 0;
+  
+  setInterval(() => {
+  
+    if (posicion > 3) {
+      posicion = 0
+    }
+  
+    const span = document.getElementById('dv')
+    if (span === null) throw new Error('error: esta vacia..')
+    span.textContent = dic[posicion];
+  
+    posicion++;
+  
+  }, 3000);
+
+</script>
+
+
+<style>
+ .descript {
+  margin-bottom: 100px;
+}
+ h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+ h1 span {
+  color: var(--azulP);
+}
+ #dv {
+  color: var(--azulP);
+}
+ .dev {
+  font-size: 2.4rem;
+  color: var(--white);
+  font-weight: 600;
+}
+ .img-me img {
+  border-radius: 50%;
+  box-shadow: 1px 1px 100px var(--azulP);
+  transition: all 0.4s ease-in-out;
+}
+ .img-me img:hover {
+  border-radius: 30px;
+}
+ .social a {
+  display: inline-block;
+  font-size: 1.8rem;
+  color: var(--white);
+  transition: all 0.3s ease-in-out;
+  padding: 5px 10px;
+}
+ .social a:hover {
+  border-radius: 10px;
+  transform: scale(0.8);
+  filter: drop-shadow(-1px -1px 20px var(--azulP));
+}
+ .cv {
+  margin-top: 30px;
+}
+ .cv a {
+  display: table;
+  background-color: var(--azulP);
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+  text-decoration: none;
+  filter: brightness(0.6);
+  transition: all 0.3s ease-in-out;
+}
+ .cv a:hover {
+  filter: none;
+  transform: scale(1.1);
+}
+</style>
