@@ -21,23 +21,28 @@ Holaa, soy Davinson Vanegas, Desarrollador de Software | Freelance Full-Stack, s
 
 
 ## Front-end
-- HTML | CSS3
+- HTML5 | CSS3
 - VANILLA JS
 - SASS
-- BABEL
 
 ## Back-end
 - NODE.JS
 - EXPRESS
 - TYPESCRIPT
 - MYSQL
+- POSTGRESQL
 - PHP
 - JQUERY
 - BABEL
 
 ## Framework
-- BOOTSTRAP | TAILWINDCSS
+- BOOTSTRAP
+- TAILWINDCSS
 - ASTRO
+
+# Tools
+- BABEL
+- GIT & GITHUB
 
 ## Portafolio-dv v2
 
