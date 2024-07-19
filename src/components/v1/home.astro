@@ -2,7 +2,7 @@
 	
     <article class="col-12 col-md-6 descript pt-5" id="inicio">
         <h1 class="focus-in-expand">Hola👋🏽 Soy <span>Davinson vanegas</span></h1>
-        <span class="dev">Desarrollador <span id="dv"> Trainee</span></span>
+        <span class="dev">Desarrollador <span id="dv">Full Stack jr</span></span>
 
         <div class="social mt-2">
         <a href="https://www.linkedin.com/in/davinson-vanegas/"><i class="bi bi-linkedin"></i></a>
@@ -12,7 +12,12 @@
         </div>
 
         <div class="cv">
-        <a href="../CV.pdf" download="CV_davinson_vanegas.pdf">Descargar CV</a>
+        <a 
+        target="_blank"
+        href="../Hoja_de_vida_Davinson_Andres_Vanegas_Tabares.pdf" 
+        >
+          Descargar CV
+        </a>
         </div>
 
     </article>
@@ -32,15 +37,14 @@
 const dic = [
     " Back-end",
     " Front-end",
-    " Full Stack jr",
-    " Trainee"
+    " Full Stack jr"
   ];
   
   let posicion = 0;
   
   setInterval(() => {
   
-    if (posicion > 3) {
+    if (posicion >= dic.length) {
       posicion = 0
     }
   

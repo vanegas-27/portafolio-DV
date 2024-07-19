@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+Allow: /public/
+Sitemap: https://portafolio-dv.netlify.app/v1/sitemap.xml
+
